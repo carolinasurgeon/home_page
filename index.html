@@ -1,0 +1,621 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Amir H. Marashi, MD, DDS, FACS - Oral & Maxillofacial Surgeon</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --blue: #185ADB;
+            --blue-dark: #0D3B8D;
+            --bg-light: #F8FAFC;
+            --bg-white: #FFFFFF;
+            --text-dark: #1A202C;
+            --text-gray: #64748B;
+            --border: #E2E8F0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            color: var(--text-dark);
+            line-height: 1.6;
+            background-color: var(--bg-light);
+        }
+
+        header {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background: var(--bg-white);
+            border-bottom: 1px solid var(--border);
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+        }
+
+        nav {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 70px;
+        }
+
+        .nav-brand {
+            font-size: 18px;
+            font-weight: 600;
+            color: var(--blue);
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 32px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-dark);
+            font-size: 14px;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+
+        .nav-links a:hover {
+            color: var(--blue);
+        }
+
+        .hero {
+            background: linear-gradient(135deg, var(--blue) 0%, var(--blue-dark) 100%);
+            color: white;
+            padding: 80px 24px;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 48px;
+            font-weight: 700;
+            margin-bottom: 24px;
+        }
+
+        .hero .subtitle {
+            font-size: 24px;
+            font-weight: 400;
+            opacity: 0.95;
+            margin-bottom: 24px;
+        }
+
+        .hero .location {
+            font-size: 16px;
+            opacity: 0.85;
+            margin-bottom: 32px;
+        }
+
+        .contact-links {
+            display: flex;
+            gap: 24px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .contact-links a {
+            color: white;
+            text-decoration: none;
+            font-size: 14px;
+            transition: opacity 0.2s;
+        }
+
+        .contact-links a:hover {
+            opacity: 0.8;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 60px 24px;
+        }
+
+        section {
+            margin-bottom: 80px;
+        }
+
+        .section-title {
+            font-size: 28px;
+            font-weight: 700;
+            margin-bottom: 32px;
+            padding-bottom: 16px;
+            border-bottom: 2px solid var(--blue);
+            color: var(--blue);
+        }
+
+        .summary-card {
+            background: var(--bg-white);
+            padding: 32px;
+            border-radius: 8px;
+            border-left: 4px solid var(--blue);
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+            line-height: 1.8;
+            font-size: 16px;
+        }
+
+        .cards-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 24px;
+            margin-bottom: 32px;
+        }
+
+        .card {
+            background: var(--bg-white);
+            padding: 24px;
+            border-radius: 8px;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+            border-top: 3px solid var(--blue);
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+        }
+
+        .card h3 {
+            color: var(--blue);
+            font-size: 18px;
+            margin-bottom: 8px;
+            font-weight: 600;
+        }
+
+        .card-subtitle {
+            color: var(--text-gray);
+            font-size: 14px;
+            font-weight: 500;
+            margin-bottom: 8px;
+        }
+
+        .timeline-item {
+            padding-bottom: 24px;
+            margin-bottom: 24px;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .timeline-item:last-child {
+            border-bottom: none;
+        }
+
+        .timeline-item h4 {
+            color: var(--text-dark);
+            font-size: 16px;
+            font-weight: 600;
+            margin-bottom: 4px;
+        }
+
+        .timeline-item .role {
+            color: var(--blue);
+            font-size: 14px;
+            font-weight: 500;
+            margin-bottom: 4px;
+        }
+
+        .timeline-item .institution {
+            color: var(--text-gray);
+            font-size: 13px;
+        }
+
+        .two-column {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 32px;
+        }
+
+        @media (max-width: 768px) {
+            .two-column {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .column-title {
+            font-size: 18px;
+            font-weight: 600;
+            color: var(--blue);
+            margin-bottom: 16px;
+        }
+
+        .list-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            padding: 12px 0;
+            font-size: 14px;
+            color: var(--text-dark);
+        }
+
+        .list-item::before {
+            content: '';
+            min-width: 6px;
+            width: 6px;
+            height: 6px;
+            background: var(--blue);
+            border-radius: 50%;
+            margin-top: 6px;
+            flex-shrink: 0;
+        }
+
+        .publication {
+            padding: 16px 0;
+            border-bottom: 1px solid var(--border);
+            font-size: 14px;
+            line-height: 1.7;
+        }
+
+        .publication:last-child {
+            border-bottom: none;
+        }
+
+        .publication-title {
+            font-weight: 600;
+            display: block;
+            margin-bottom: 4px;
+        }
+
+        .publication-details {
+            color: var(--text-gray);
+            font-size: 13px;
+        }
+
+        footer {
+            background: var(--text-dark);
+            color: white;
+            padding: 40px 24px;
+            text-align: center;
+            font-size: 14px;
+        }
+
+        footer a {
+            color: #3B82F6;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 32px;
+            }
+
+            .hero .subtitle {
+                font-size: 18px;
+            }
+
+            .nav-links {
+                gap: 16px;
+                font-size: 13px;
+            }
+
+            .container {
+                padding: 40px 16px;
+            }
+
+            .section-title {
+                font-size: 22px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <header>
+        <nav>
+            <a href="#" class="nav-brand">Amir H. Marashi</a>
+            <ul class="nav-links">
+                <li><a href="#about">About</a></li>
+                <li><a href="#education">Education</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#publications">Publications</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <h1>Amir H. Marashi, MD, DDS, FACS</h1>
+        <p class="subtitle">Oral and Maxillofacial Surgeon</p>
+        <p class="location">Charlotte, North Carolina</p>
+        <div class="contact-links">
+            <a href="mailto:carolinasurgeon@gmail.com">Email</a>
+            <a href="https://www.linkedin.com/in/amir-marashi-md-dds-facs-34336a1a/" target="_blank">LinkedIn</a>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <div class="container">
+        <!-- Professional Summary -->
+        <section id="about">
+            <h2 class="section-title">Professional Summary</h2>
+            <div class="summary-card">
+                <p>Fellow American College of Surgeons, board certified Oral and Maxillofacial Surgeon with dual MD and DDS degrees with three decades of clinical, academic and leadership experience. Former Assistant Professor of Surgery and examiner for the American Board of Oral and Maxillofacial Surgery. Published researcher with seminal contributions to craniofacial genetics, including co-identification of Oculo-Facio-Cardio-Dental (Gorlin-Marashi) Syndrome. Extensive experience in private practice management, surgery, anesthesia, trauma, and multidisciplinary care.</p>
+            </div>
+        </section>
+
+        <!-- Education -->
+        <section id="education">
+            <h2 class="section-title">Education</h2>
+            <div class="timeline-item">
+                <h4>University of Minnesota</h4>
+                <div class="role">Bachelor of Science (BS), With Distinction, Summa Cum Laude</div>
+                <div class="institution">1989</div>
+            </div>
+            <div class="timeline-item">
+                <h4>University of Minnesota School of Dentistry</h4>
+                <div class="role">Doctor of Dental Surgery (DDS), With Distinction, Cum Laude</div>
+                <div class="institution">1987–1991</div>
+            </div>
+            <div class="timeline-item">
+                <h4>Louisiana State University School of Medicine</h4>
+                <div class="role">Doctor of Medicine (MD), Cum Laude</div>
+                <div class="institution">1997–1999</div>
+            </div>
+        </section>
+
+        <!-- Postgraduate Training -->
+        <section>
+            <h2 class="section-title">Postgraduate Training</h2>
+            <div class="timeline-item">
+                <h4>Louisiana State University Health Sciences Center – Shreveport</h4>
+                <div class="role">Transitional Medicine Internship</div>
+                <div class="institution">1999–2000</div>
+            </div>
+            <div class="timeline-item">
+                <h4>Louisiana State University Health Sciences Center – Shreveport</h4>
+                <div class="role">Oral and Maxillofacial Surgery Residency</div>
+                <div class="institution">1991–1993</div>
+            </div>
+            <div class="timeline-item">
+                <h4>University of Rochester School of Medicine and Dentistry</h4>
+                <div class="role">Oral and Maxillofacial Surgery Residency</div>
+                <div class="institution">1993–1995</div>
+            </div>
+        </section>
+
+        <!-- Professional Experience -->
+        <section id="experience">
+            <h2 class="section-title">Professional Experience</h2>
+            <div class="timeline-item">
+                <h4>Examination Committee Member</h4>
+                <div class="role">American Board of Oral and Maxillofacial Surgery</div>
+                <div class="institution">2016–2024</div>
+            </div>
+            <div class="timeline-item">
+                <h4>Founder & Managing Partner</h4>
+                <div class="role">Greater Charlotte Oral & Facial Surgery</div>
+                <div class="institution">2002–2023</div>
+            </div>
+            <div class="timeline-item">
+                <h4>Founding Managing Member</h4>
+                <div class="role">Pluripotent Partnership</div>
+                <div class="institution">2016–2023</div>
+            </div>
+            <div class="timeline-item">
+                <h4>Private Practice Oral & Maxillofacial Surgeon</h4>
+                <div class="role">Drs. Black, Jackfert & Allen, Inc.</div>
+                <div class="institution">Charleston, WV — 2001–2002</div>
+            </div>
+            <div class="timeline-item">
+                <h4>Assistant Professor of Surgery (OMS Division)</h4>
+                <div class="role">Louisiana State University Health Sciences Center</div>
+                <div class="institution">Shreveport, LA — 2000–2001</div>
+            </div>
+            <div class="timeline-item">
+                <h4>Clinical Instructor of Surgery (OMS Division)</h4>
+                <div class="role">Louisiana State University Health Sciences Center</div>
+                <div class="institution">Shreveport, LA — 1997–1999</div>
+            </div>
+            <div class="timeline-item">
+                <h4>Private Practice Oral & Maxillofacial Surgeon</h4>
+                <div class="role">Curtis, Runck, Nelson, PA</div>
+                <div class="institution">Mankato, MN — 1995–1997</div>
+            </div>
+        </section>
+
+        <!-- Credentials -->
+        <section>
+            <h2 class="section-title">Credentials & Certifications</h2>
+            <div class="two-column">
+                <div>
+                    <div class="column-title">Board Certifications</div>
+                    <div class="list-item">Fellow, American College of Surgeons (FACS) — 2017</div>
+                    <div class="list-item">Diplomate, American Board of Oral and Maxillofacial Surgery — 1998</div>
+                    <div class="list-item">Diplomate, American Board of Dental Anesthesiology — 2005</div>
+                    <div class="list-item">Diplomate, National Board of Medical Examiners — 2000</div>
+                    <div class="list-item">Diplomate, National Board of Dental Examiners — 1991</div>
+                </div>
+                <div>
+                    <div class="column-title">Licenses</div>
+                    <div class="list-item">North Carolina Medical & Dental</div>
+                    <div class="list-item">South Carolina Medical & Dental</div>
+                    <div class="list-item">West Virginia Medical & Dental</div>
+                    <div class="list-item">Minnesota Dental</div>
+                    <div class="list-item">Louisiana Dental</div>
+                    <div style="margin-top: 16px;">
+                        <div class="column-title">Advanced Training</div>
+                        <div class="list-item">Advanced Trauma Life Support (ATLS)</div>
+                        <div class="list-item">Advanced Cardiac Life Support (ACLS)</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Honors & Awards -->
+        <section>
+            <h2 class="section-title">Honors & Awards</h2>
+            <div class="cards-grid">
+                <div class="card">
+                    <div class="card-subtitle">1989–1991</div>
+                    <h3>University of Minnesota Full Academic Scholarship</h3>
+                </div>
+                <div class="card">
+                    <div class="card-subtitle">1991</div>
+                    <h3>American Dental Society of Anesthesiology Award</h3>
+                </div>
+                <div class="card">
+                    <div class="card-subtitle">1988</div>
+                    <h3>School of Dentistry Century Club Fellowship</h3>
+                </div>
+                <div class="card">
+                    <div class="card-subtitle">1988</div>
+                    <h3>Phi Kappa Phi Honor Society</h3>
+                </div>
+                <div class="card">
+                    <div class="card-subtitle">1987–1991</div>
+                    <h3>Dean's List, University of Minnesota School of Dentistry</h3>
+                </div>
+                <div class="card">
+                    <div class="card-subtitle">1987</div>
+                    <h3>Academic All-American, United States Achievement Academy</h3>
+                </div>
+            </div>
+        </section>
+
+        <!-- Publications -->
+        <section id="publications">
+            <h2 class="section-title">Publications</h2>
+            <div class="publication">
+                <span class="publication-title">Gorlin RJ, Marashi AH, Obwegeser HL. Oculo-Facio-Cardio-Dental Syndrome.</span>
+                <span class="publication-details">Am J Med Genet. 1996;63:290-292.</span>
+            </div>
+            <div class="publication">
+                <span class="publication-title">Marashi AH, Gorlin RJ. Radiculomegaly of Canines and Congenital Cataracts: Confirmation of a Syndrome.</span>
+                <span class="publication-details">Am J Med Genet. 1992;42:143.</span>
+            </div>
+            <div class="publication">
+                <span class="publication-title">Marashi AH, Gorlin RJ. Radiculomegaly of Canines and Congenital Cataracts—A Syndrome?</span>
+                <span class="publication-details">Oral Surg Oral Med Oral Pathol. 1990;70:802-803.</span>
+            </div>
+            <div class="publication">
+                <span class="publication-title">Krishnan DG, Marashi AH, Malik A. Pseudoaneurysm of the Internal Maxillary Artery Secondary to Gunshot Wound Managed by Endovascular Technique.</span>
+                <span class="publication-details">J Oral Maxillofac Surg. 2004;62:500-502.</span>
+            </div>
+            <div class="publication">
+                <span class="publication-title">Sikes JW, Connor MS, Marashi AH. Maxillofacial Impalement by a Hair-Weaving Instrument.</span>
+                <span class="publication-details">Plast Reconstr Surg. 2003;111(1):319-321.</span>
+            </div>
+            <div class="publication">
+                <span class="publication-title">Best JB, Marashi AH, Pollan LD. Neuromuscular Blockade After Clindamycin Administration.</span>
+                <span class="publication-details">J Oral Maxillofac Surg. 1999;57:600-603.</span>
+            </div>
+            <div class="publication">
+                <span class="publication-title">Tanka H, Westesson PL, Emmings FG, Marashi AH. Simple Bone Cyst of the Mandibular Condyle with Pathologic Fracture.</span>
+                <span class="publication-details">J Oral Maxillofac Surg. 1996;54:1454-1458.</span>
+            </div>
+        </section>
+
+        <!-- Selected Presentations -->
+        <section>
+            <h2 class="section-title">Selected Presentations</h2>
+            <div class="cards-grid">
+                <div class="card">
+                    <h3>Treatment Options for Snoring</h3>
+                    <div class="card-subtitle">South Charlotte Dental Study Club, 2003</div>
+                </div>
+                <div class="card">
+                    <h3>Treatment of Mandibular Fractures</h3>
+                    <div class="card-subtitle">SC Society of Surgical Nurses, 2003</div>
+                </div>
+                <div class="card">
+                    <h3>Surgical Treatment of Obstructive Sleep Apnea</h3>
+                    <div class="card-subtitle">Grand Rounds, St. Francis Hospital, 2001</div>
+                </div>
+                <div class="card">
+                    <h3>Preoperative Assessment of the Surgical Patient</h3>
+                    <div class="card-subtitle">LSU Medical School, 2001</div>
+                </div>
+                <div class="card">
+                    <h3>Facial Nerve Trauma</h3>
+                    <div class="card-subtitle">LSU Trauma Conference, 2001</div>
+                </div>
+                <div class="card">
+                    <h3>Anesthesia for OMS Patients</h3>
+                    <div class="card-subtitle">LSU Anesthesia Grand Rounds, 2000</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Research Experience -->
+        <section>
+            <h2 class="section-title">Research Experience</h2>
+            <div class="timeline-item">
+                <h4>In Vitro Mechanical Analysis of Locking Reconstruction Plating</h4>
+                <div class="institution">Louisiana State University Health Sciences Center, 2001</div>
+            </div>
+            <div class="timeline-item">
+                <h4>Mechanical Stability of Compression Plates with Bone Cements</h4>
+                <div class="institution">University of Rochester, 1995</div>
+            </div>
+            <div class="timeline-item">
+                <h4>Isolated Macrodontia: Genetic Patterns</h4>
+                <div class="institution">University of Minnesota, 1989</div>
+            </div>
+            <div class="timeline-item">
+                <h4>Heterogeneity of Isolated Genetic Deafness</h4>
+                <div class="institution">University of Minnesota, 1988</div>
+            </div>
+        </section>
+
+        <!-- Professional Memberships -->
+        <section>
+            <h2 class="section-title">Professional Memberships</h2>
+            <div class="cards-grid">
+                <div class="card">
+                    <div class="list-item">Fellow, American College of Surgeons</div>
+                </div>
+                <div class="card">
+                    <div class="list-item">Fellow, American Association of Oral and Maxillofacial Surgeons</div>
+                </div>
+                <div class="card">
+                    <div class="list-item">American Society of Maxillofacial Surgeons</div>
+                </div>
+                <div class="card">
+                    <div class="list-item">American Medical Association</div>
+                </div>
+                <div class="card">
+                    <div class="list-item">American Dental Association</div>
+                </div>
+                <div class="card">
+                    <div class="list-item">North Carolina Society of Oral and Maxillofacial Surgeons</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Hospital Affiliation -->
+        <section>
+            <h2 class="section-title">Hospital Affiliation</h2>
+            <div class="summary-card">
+                Atrium Health Carolina Medical Center – Pineville, Charlotte, NC
+            </div>
+        </section>
+    </div>
+
+    <!-- Footer -->
+    <footer id="contact">
+        <p>&copy; 2025 Amir H. Marashi. All rights reserved.</p>
+        <p style="margin-top: 16px; font-size: 13px;">
+            <a href="mailto:carolinasurgeon@gmail.com">Email</a> • 
+            <a href="https://www.linkedin.com/in/amir-marashi-md-dds-facs-34336a1a/" target="_blank">LinkedIn</a>
+        </p>
+    </footer>
+</body>
+</html>
